@@ -21,7 +21,8 @@ export default class Enemy {
   }
 
   draw(ctx, pause, pacman) {
-    if (!pause) {
+    console.log(pause());
+    if (!pause()) {
       this.#move();
       this.#changeDirection();
     }
@@ -80,6 +81,9 @@ export default class Enemy {
           break;
         case MovingDirection.left:
           this.x -= this.velocity;
+          break;
+        case MovingDirection.right:
+          this.x += this.velocity;
           break;
       }
     }

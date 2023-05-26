@@ -13,7 +13,7 @@ const enemies = tileMap.getEnemies(velocity);
 function gameLoop() {
   tileMap.draw(ctx);
   pacman.draw(ctx);
-  enemies.forEach((enemy) => enemy.draw(ctx));
+  enemies.forEach((enemy) => enemy.draw(ctx, pause, pacman));
 }
 
 function pause() {
